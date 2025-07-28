@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<select id="ids">
+  <option value="">--Choose ID--</option>
+</select>
+
+<div id="result"></div>
+
+<script>
+  var students = [
+    { id: 1, name: "Ali", age: 22, grade: 90 },
+    { id: 2, name: "Nora", age: 20, grade: 85 },
+    { id: 3, name: "Nada", age: 25, grade: 75 }
+  ];
+
+  var s = document.getElementById("ids");
+  for (var i = 0; i < students.length; i++) {
+    var o = document.createElement("option");
+    o.value = students[i].id;
+    o.text = students[i].id;
+    s.appendChild(o);
+  }
+
+  s.onchange = function () {
+    var id = this.value;
+    for (var i = 0; i < students.length; i++) {
+      if (students[i].id == id) {
+        document.getElementById("result").innerHTML =
+          "Name: " + students[i].name + "<br>" +
+          "Age: " + students[i].age + "<br>" +
+          "Grade: " + students[i].grade;
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

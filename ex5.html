@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="output"></div>
+
+<script>
+  var data = ["ahmed", "ali ", "nada", "menna", "joe", "Omar"];
+
+  var out = document.getElementById("output");
+
+  for (var i = 0; i < data.length; i++) {
+    var d = document.createElement("div");
+    d.innerText = data[i];
+    d.style.color = (i % 2 == 0) ? "green" : "red";
+    out.appendChild(d);
+  }
+</script>
+
+</body>
+</html>
